@@ -45,7 +45,7 @@ The enquiry should still be saved successfully in Supabase even if the notificat
 
 If the notification request fails, the system can log the failure and retry it later. The team can also see the enquiry directly from the dashboard and contact the lead manually if required.
 
-3. **Visibility:** I would implement a subtle "notification status" indicator per lead so they know if auto-notification failed and can manually reach out.
+3. **Visibility:** **Visibility:** I would implement a subtle "notification status" indicator per lead so the team knows if automatic notification failed and can manually reach out.
 
 ---
 
@@ -73,8 +73,7 @@ Auto-update (`registerType: 'autoUpdate'`) reloads the tab without warning, whic
 ### 6a. How would you convert this React app into an Android APK?
 
 **Option A — PWA (recommended for this product):**
-Since this is already a PWA (manifest + service worker), Android users on Chrome can "Add to Home Screen" to get an app-like experience without an APK. For a more native integration (including app store listing), use **Bubblewrap** (Google's official CLI) or **PWABuilder** to wrap the PWA in a **Trusted Web Activity (TWA)** and export a signed `.aab`/`.apk`. This produces a real Android app that passes Play Store review and reuses 100% of the existing web code.
-
+Since this is already a PWA (manifest + service worker), Android users on Chrome can "Add to Home Screen" to get an app-like experience without an APK. For a more native integration (including app store listing), use **Bubblewrap** (Google's official CLI) or **PWABuilder** to wrap the PWA in a **Trusted Web Activity (TWA)** and export a signed `.aab`/`.apk`. This produces a signed Android app suitable for Play Store submission while reusing the existing web code.
 **Option B — Capacitor:**
 If native device APIs are needed (push notifications, camera, etc.), wrap with **Capacitor** (`npm install @capacitor/core @capacitor/android`), then `npx cap add android && npx cap sync`. This generates a native Android project that wraps the web app in a WebView with native bridge access.
 
