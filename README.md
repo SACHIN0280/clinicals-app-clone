@@ -20,7 +20,7 @@ A clinical training lead intake & follow-up tracker — a PWA built with React, 
 
 ```bash
 git clone <repo-url>
-cd clinicals_assignment
+cd clinicals-app-clone
 npm install
 ```
 
@@ -32,12 +32,11 @@ npm install
 
 ### 3. Configure Environment Variables
 
-Copy `.env` and fill in your Supabase credentials:
+Copy `.env.example` to `.env` and fill in your Supabase credentials:
 
-```bash
+```env
 VITE_SUPABASE_URL=https://your-project.supabase.co
 VITE_SUPABASE_ANON_KEY=your-anon-key
-```
 
 ### 4. Run Locally
 
