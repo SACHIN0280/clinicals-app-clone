@@ -45,7 +45,7 @@ The enquiry should still be saved successfully in Supabase even if the notificat
 
 If the notification request fails, the system can log the failure and retry it later. The team can also see the enquiry directly from the dashboard and contact the lead manually if required.
 
-3. **Visibility:** **Visibility:** I would implement a subtle "notification status" indicator per lead so the team knows if automatic notification failed and can manually reach out.
+3. **Visibility:** I would implement a subtle "notification status" indicator per lead so the team knows if automatic notification failed and can manually reach out.
 
 ---
 
