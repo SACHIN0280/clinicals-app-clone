@@ -7,7 +7,7 @@ A clinical training lead intake & follow-up tracker — a PWA built with React, 
 - **Public enquiry form** at `/` — collects name, phone, city with real-time validation
 - **Team login** at `/login` — Supabase email/password auth with session persistence
 - **Team dashboard** at `/dashboard` — protected route with search, stage filtering (with live counts), 1-tap stage advancement, Call & WhatsApp quick actions
-- **PWA** — installable, works offline, update prompt on new deploys
+- **PWA** — installable, offline app-shell support, update prompt on new deploys
 
 ## Getting Started
 
@@ -34,10 +34,12 @@ npm install
 
 Copy `.env.example` to `.env` and fill in your Supabase credentials:
 
+
+Change it to:
+
 ```env
 VITE_SUPABASE_URL=https://your-project.supabase.co
 VITE_SUPABASE_ANON_KEY=your-anon-key
-
 ### 4. Run Locally
 
 ```bash
