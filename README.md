@@ -58,9 +58,13 @@ npm run preview   # preview the production build locally
 
 Push to GitHub and connect to **Vercel** or **Netlify**. Set the environment variables (`VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`) in the hosting platform's dashboard.
 
+
 ## Known Limitations
 
-- **No offline form submission:** The enquiry form requires a network connection to submit. Queuing leads locally (IndexedDB + background sync) was considered out of scope for this MVP.
-- **No real-time updates:** The dashboard does not auto-refresh when another team member updates a lead. A manual refresh button is provided. Supabase Realtime subscriptions would solve this in a next iteration.
-- **Single-team auth:** There's no per-user role management. All authenticated users have full read/write access to all enquiries.
-- **WhatsApp notification not wired:** The notification system described in NOTES.md (section 2) is documented as an architecture decision but not implemented as code in this repo.
+- **No offline form submission:** The enquiry form requires a network connection to submit. Queuing leads locally using IndexedDB and background sync was considered out of scope for this MVP.
+
+- **No real-time updates:** The dashboard does not automatically refresh when another team member updates a lead. A manual refresh is available. Supabase Realtime subscriptions could be added in a future iteration.
+
+- **Single-team auth:** There is no per-user role management. All authenticated team users currently have full read/write access to enquiries.
+
+- **WhatsApp notification not wired:** The notification system described in `NOTES.md` (Section 2) is documented as an architecture decision but is not implemented in the current repository.
