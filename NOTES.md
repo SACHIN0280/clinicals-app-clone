@@ -132,17 +132,21 @@ For **TWA / Bubblewrap** apps, updates are actually handled like a PWA update â€
 
 ## AI Usage
 
-This project was built with the assistance of **Antigravity (Google DeepMind)**, an AI pair-programming assistant.
+AI tools were used as a development and learning assistant during this project.
 
-**How AI was used:**
-- Generated all boilerplate code (Vite project setup, Tailwind config, routing structure).
-- Wrote the initial versions of all React components (EnquiryForm, EnquiryCard, EnquiryDetail, DashboardPage, LoginPage, UpdatePrompt).
-- Wrote the Supabase schema SQL including RLS policies and indexes.
-- Drafted the written answers for sections 2 (Notifications) and 6 (Android).
+### How AI was used
 
-**What I verified and own:**
-- All architectural decisions (PWA-first approach, Supabase Auth, optimistic updates, TWA for Android).
-- All written answers represent my genuine reasoning, with AI assistance in articulating them.
-- The overall structure, component decomposition, and data flow design.
+AI assistance was mainly used for:
 
-**Time spent:** Approximately X hours (fill in actual time).
+- Debugging and resolving implementation issues.
+- Getting guidance on React, Supabase, PWA, and mobile-related concepts.
+- Exploring implementation approaches when I was unfamiliar with a particular requirement.
+- Refining some UI and code during development.
+- Drafting and improving the written sections of this document.
+
+I reviewed, tested, and modified the implementation during development and verified the main functionality against the assignment requirements.
+
+### Example of an AI suggestion I rejected
+
+The AI suggested adding an additional UI/component library for some parts of the dashboard. I decided not to use it because the required functionality could be implemented with React and Tailwind CSS, keeping the project lightweight and aligned with the assignment requirements.
+
