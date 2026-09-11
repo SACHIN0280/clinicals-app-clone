@@ -41,13 +41,11 @@ The secrets are never committed to version control. The `.env` file for local de
 
 ### 2c. What is your fallback if the notification service is down?
 
-**Two-layer fallback:**
+The enquiry should still be saved successfully in Supabase even if the notification service is unavailable. Notification delivery should be handled separately from the enquiry submission so that a third-party API failure does not prevent the lead from being created.
 
-1. **Immediate fallback (same request):** The Edge Function wraps the WhatsApp API call in a try-catch. If it fails (5xx, timeout, rate limit), it immediately retries once after a 500ms delay, then falls back to sending an **email** via Resend (a developer-friendly transactional email API). Email is a lower-risk, highly reliable channel.
+If the notification request fails, the system can log the failure and retry it later. The team can also see the enquiry directly from the dashboard and contact the lead manually if required.
 
-2. **Guaranteed delivery via Supabase queue (async):** Failed notifications are written to a `notification_queue` table with a `failed` status. A separate cron job (Supabase `pg_cron` or an Edge Function scheduled every 5 minutes) re-processes these rows. This decouples notification delivery from the user-facing form submission, so a failed third-party call never blocks or degrades the candidate's form experience.
-
-3. **Visibility:** The team dashboard has a subtle "notification status" indicator per lead so they know if auto-notification failed and can manually reach out.
+3. **Visibility:** I would implement a subtle "notification status" indicator per lead so they know if auto-notification failed and can manually reach out.
 
 ---
 
